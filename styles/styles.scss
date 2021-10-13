@@ -1,0 +1,325 @@
+// VARIABLES
+
+$color-brand: #e75e4f;
+$color-dark: #1D1F21;
+$color-mid: #7D8791;
+$color-midlight: #B3BBC4;
+$color-light: #FDF5F0;
+$color-white: #FFFFFF;
+
+$font-small: 12px;
+$font-medium: 16px;
+$font-large: 18px;
+$font-xlarge: 24px;
+$font-xxlarge: 32px;
+$font-normal: 500;
+$font-bold: 900;
+
+$spacing: 4px;
+
+$border-radius: 6px;
+
+$transition: all 0.25s ease;
+
+
+
+// GENERAL
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    color: $color-dark;
+    font-size: $font-medium;
+    line-height: 1.4;
+    font-weight: $font-normal;
+}
+
+body {
+    background-color: $color-light;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+a {
+    text-underline-offset: 8px;
+    transition: $transition;
+    &:hover {
+        opacity: 0.75;
+    }
+}
+
+button {
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.button {
+    padding: 12px 16px;
+    background: $color-brand;
+    color: $color-white;
+    font-weight: $font-bold;
+    border-radius: $border-radius;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.link, .button {
+    @media screen and (max-width: 600px) {
+        display: grid;
+    }
+}
+
+#mobile-nav {
+    width: 100%;
+    height: 100vh;
+    background: $color-dark;
+    position: fixed;
+    z-index: 1;
+    padding: $spacing * 12;
+    #header {
+        display: flex;
+        justify-content: space-between;
+    }
+    nav {
+        width: 100%;
+        height: auto;
+        margin-top: $spacing * 6;
+        a {
+            color: $color-white;
+            margin-top: $spacing * 8;
+            text-align: center;
+        }
+    }
+    svg {
+        cursor: pointer;
+        transition: $transition;
+        &:hover {
+            opacity: 0.75;
+        }
+    }
+    @media screen and (min-width: 600px) {
+        display: none;
+    }
+}
+
+#header {
+    .photo {
+        width: 100%;
+        height: 424px;
+        object-fit: cover;
+        clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+        @media screen and (max-width: 600px) {
+            height: 304px;
+        }
+    }
+    #gradient {
+        width: 100%;
+        height: 424px;
+        background: linear-gradient(180deg, #1D1F21 0%, rgba(255, 255, 255, 0) 86.46%);
+        mix-blend-mode: multiply;
+        position: absolute;
+        top: 0;
+        @media screen and (max-width: 600px) {
+            height: 304px;
+        }
+    }
+    section {
+        width: 100%;
+        height: auto;
+        padding: $spacing * 12;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        .link {
+            color: $color-white;
+            margin-left: $spacing * 2;
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
+        }
+        .button {
+            color: $color-white;
+            margin-left: $spacing * 4;
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
+        }
+        img {
+            width: auto;
+            height: auto;
+        }
+        button {
+            cursor: pointer;
+            transition: $transition;
+            &:hover {
+                opacity: 0.75;
+            }
+            @media screen and (min-width: 600px) {
+                display: none;
+            }
+        }
+    }
+}
+
+.body {
+    padding: 0 $spacing * 12;
+}
+
+.content {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin: $spacing * 9 auto;
+}
+
+h1 {
+    font-size: $font-xxlarge;
+    font-weight: $font-bold;
+    margin-bottom: $spacing * 2;
+}
+
+h2 {
+    font-size: $font-xlarge;
+    font-weight: $font-bold;
+    margin-bottom: $spacing * 2;
+}
+
+h3 {
+    font-size: $font-large;
+    margin-bottom: $spacing * 2;
+    b {
+        font-weight: $font-bold;
+        font-size: $font-large;
+    }
+}
+
+h4 {
+    b {
+        font-weight: $font-bold;
+        font-size: $font-large;
+        color: $color-brand;
+    }
+}
+
+
+.inline-photo {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    clip-path: polygon(0 25%, 100% 0, 100% 75%, 0 100%);
+    @media screen and (max-width: 600px) {
+        height: 376px;
+    }
+}
+
+.color-section {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient($color-brand, $color-brand);
+    padding: $spacing * 40 $spacing * 12;
+    margin-top: -156px;
+    color: $color-white;
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+    @media screen and (max-width: 600px) {
+        clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%);
+    }
+    h2, h3, h4, li {
+        color: $color-white;
+    }
+    h3 {
+        font-weight: $font-bold;
+    }
+    li {
+        margin-left: $spacing * 4;
+    }
+    .button {
+        background: $color-dark;
+    }
+}
+
+.social {
+    display: flex;
+    margin-top: $spacing * 2;
+    img {
+        margin-right: $spacing * 2;
+    }
+}
+
+.sample {
+    width: 100%;
+    height: auto;
+    margin-top: $spacing * 4;
+}
+
+#footer {
+    .content {
+        display: flex;
+        justify-content: space-between;
+    }
+    .link {
+        color: $color-brand;
+        font-size: $font-small;
+        margin-left: $spacing * 2;
+        @media screen and (max-width: 600px) {
+            margin-left: 0;
+            margin-bottom: $spacing * 3;
+        }
+    }
+}
+
+.sub-page {
+    width: 100%;
+    height: auto;
+    padding: $spacing * 12;
+    display: flex;
+    justify-content: space-between;
+    a {
+        color: $color-brand;
+    }
+}
+
+label {
+    display: grid;
+}
+
+input {
+    padding: $spacing * 3;
+    margin-top: $spacing;
+    border-radius: $border-radius;
+    background: $color-light;
+    border: 2px solid $color-midlight;
+    transition: $transition;
+    outline: none;
+    &:hover {
+        border-color: $color-mid;
+    }
+    &:focus {
+        border-color: $color-brand;
+        background: $color-white;
+    }
+    ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $color-midlight;
+        opacity: 1; /* Firefox */
+    }
+
+    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+        color: $color-midlight;
+    }
+
+    ::-ms-input-placeholder { /* Microsoft Edge */
+        color: $color-midlight;
+    }
+}
